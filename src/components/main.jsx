@@ -3,7 +3,7 @@ import React from 'react';
 const Main = () => {
 
     return (
-        <div>
+        <div className="flex flex-col bg-slate-900 w-full">
             main
         </div>
     );
