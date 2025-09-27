@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
     "react": "^19.1.1",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^19.1.1",
     "react-feather": "^2.0.10",
     "react-tiny-popover": "^8.1.6",

@@ -22,7 +22,7 @@ function App() {
       }
     ]
   }
-  const [allboard, setAllBoard] = usestate(null)
+  const [allboard, setAllBoard] = useState(boardData)
 
   return (
     <>

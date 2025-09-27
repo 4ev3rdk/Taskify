@@ -1,16 +1,31 @@
 import React, { useState } from 'react';
 import { X, Plus } from 'react-feather';
 
-const CardAdd = () => {
-    const [card, SetCard] = useState(' ');
+const CardAdd = (props) => {
+    const [card, setCard] = useState('');
     const [show, setShow] = useState(false);
+
+    const saveCard = () => {
+        if (!card) {
+            return;
+        }
+        props.getcard(card);
+        setCard('');
+        setShow(!show);
+    }
+
+    const closeBtn = () => {
+        setCard('')
+        setShow(!show)
+    }
+
     return (
         <div>
             <div className="flex flex-col">
                 {show && <div>
-                    <textarea className="w-full rounded-md border-2 bg-zinc-700 border-zinc-900" name="" id="" cols="30" rows="2" placeholder="Enter card title..."></textarea>
+                    <textarea value={card} onChange={(e) => setCard(e.target.value)} className="w-full rounded-md border-2 bg-zinc-700 border-zinc-900" name="" id="" cols="30" rows="2" placeholder="Enter card title..."></textarea>
                     <div className="flex p-1">
-                        <button className="p-1 rounded bg-sky-600 text-white mr-2">Add Card</button>
+                        <button onClick={() => saveCard()} className="p-1 rounded bg-sky-600 text-white mr-2">Add Card</button>
                         <button onClick={() => setShow(!show)} className="p-1 rounded hover:bg-gray-600">
                             <X size="16"></X>
                         </button>
